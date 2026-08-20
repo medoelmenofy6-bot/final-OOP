@@ -1,0 +1,60 @@
+SMART CLINIC MANAGEMENT SYSTEM - UML OUTLINE
+
+Person (abstract)
+- id: String
+- name: String
+- phone: String
++ getRole(): String
++ displayInfo(): String
+
+Patient extends Person
+- age: int
+- gender: String
+- condition: String
+
+Doctor extends Person
+- specialty: String
+
+Appointment
+- id: String
+- patientId: String
+- doctorId: String
+- date: String
+- time: String
+- notes: String
+- status: String
+
+Prescription
+- id: String
+- appointmentId: String
+- medicine: String
+- dosage: String
+- instructions: String
+
+ClinicManager
+- patients: HashMap<String, Patient>
+- doctors: HashMap<String, Doctor>
+- appointments: HashMap<String, Appointment>
+- prescriptions: HashMap<String, Prescription>
+- people: ArrayList<Person>
++ addPatient(...)
++ addDoctor(...)
++ addAppointment(...)
++ addPrescription(...)
++ delete...
++ saveAll()
++ loadAll()
+
+FileManager
++ savePatients(...)
++ loadPatients()
++ saveDoctors(...)
++ loadDoctors()
++ saveAppointments(...)
++ loadAppointments()
++ savePrescriptions(...)
++ loadPrescriptions()
+
+MainFrame
+- GUI panels and tables
+- forms and buttons
